@@ -25,15 +25,21 @@
             </thead>
             <tbody>
 
+
+
+            </tbody>
             <tr th:each="dto : ${result.dtoList}" >
-                <th scope="row">[[${dto.gno}]]</th>
+                <th scope="row">
+                    <a th:href="@{/guestbook/read(gno = ${dto.gno}, page=${result.page})}">
+                        [[${dto.gno}]]
+                    </a>
+                </th>
                 <td>[[${dto.title}]]</td>
                 <td>[[${dto.writer}]]</td>
                 <td>[[${dto.regDate}]]</td>
             </tr>
-
-            </tbody>
         </table>
+
 
         <ul class="pagination h-100 justify-content-center align-items-center">
             <li class="page-item" th:if="${result.prev}">
