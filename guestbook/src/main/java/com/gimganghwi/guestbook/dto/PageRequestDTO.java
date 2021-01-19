@@ -11,8 +11,13 @@ import org.springframework.data.domain.Sort;
 @AllArgsConstructor
 @Data
 public class PageRequestDTO {
+    // 페이징 관련
     private int page;
     private int size;
+
+    // 검색 관련
+    private String type;
+    private String keyword;
 
     public PageRequestDTO() {
         this.page = 1;
